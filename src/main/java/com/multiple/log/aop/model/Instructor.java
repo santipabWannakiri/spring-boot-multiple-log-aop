@@ -1,24 +1,40 @@
 package com.multiple.log.aop.model;
 
-import io.swagger.v3.oas.annotations.media.Schema;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "instructor")
-@Data
 public class Instructor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Schema(hidden = true)
+    @JsonIgnore
     private int id;
+
+    @NotBlank(message = "is mandatory")
+    @Size(min = 13, max = 13, message = "IdentificationNumber must be 13 digit")
     private String identificationNumber;
+
+    @NotBlank(message = "is mandatory")
+    @Size(min = 2, max = 20, message = "FirstName must not over 20 characters")
     private String firstName;
+
+    @NotBlank(message = "is mandatory")
+    @Size(min = 2, max = 20, message = "LastName must not over 20 characters")
     private String lastName;
+
+    @Email
     private String email;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "instructor_detail_id")
     private InstructorDetail instructorDetail;
+
 
     public Instructor() {
     }

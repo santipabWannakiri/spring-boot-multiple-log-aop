@@ -29,13 +29,13 @@ public class SpringBootMultipleLogAopApplication {
 
     private void initialObject() {
         InstructorDetail instructorDetailA = new InstructorDetail("https://youtube.com/somsak.s", "Cycling");
-        Instructor instructorA = new Instructor("130990102277550", "SOMSAK", "SANDEE", "SOMSAK.S@gmail.com", instructorDetailA);
+        Instructor instructorA = new Instructor("1309901022750", "SOMSAK", "SANDEE", "SOMSAK.S@gmail.com", instructorDetailA);
 
         InstructorDetail instructorDetailB = new InstructorDetail("https://youtube.com/somchai", "Singing");
-        Instructor instructorB = new Instructor("140998822435608", "SOMCHAI", "RIT", "SOMCHAI.R@gmail.com", instructorDetailB);
+        Instructor instructorB = new Instructor("1409988224308", "SOMCHAI", "RIT", "SOMCHAI.R@gmail.com", instructorDetailB);
 
         InstructorDetail instructorDetailC = new InstructorDetail("https://youtube.com/jirapon", "Tiktoker");
-        Instructor instructorC = new Instructor("750993648223447", "JIRAPON", "KIM", "JIRAPON.K@gmail.com", instructorDetailC);
+        Instructor instructorC = new Instructor("7509936482234", "JIRAPON", "KIM", "JIRAPON.K@gmail.com", instructorDetailC);
 
         instructorService.save(instructorA);
         instructorService.save(instructorB);

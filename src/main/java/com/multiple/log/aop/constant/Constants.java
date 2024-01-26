@@ -32,6 +32,10 @@ public final class Constants {
     public static final String SYSTEM_OR_RUNTIME_ERROR_MESSAGE_CODE = "SYSTEM_OR_RUNTIME_EXCEPTION";
     public static final String SYSTEM_OR_RUNTIME_ERROR_MESSAGE = "System error or Runtime exception.";
 
+    //====== BAD_REQUEST_ERROR ======
+    public static final String BAD_REQUEST_ERROR_CODE = "6060";
+    public static final String BAD_REQUEST_MESSAGE_CODE = "BAD_REQUEST";
+
     //====== INTERNAL_ERROR_RESPONSE_OBJECT ======
     public static final AppResponse INTERNAL_ERROR_RESPONSE_OBJECT = new AppResponse(Constants.INTERNAL_ERROR_CODE, Constants.INTERNAL_MESSAGE_CODE, Constants.UNABLE_TO_PROCESS_MESSAGE);
 
