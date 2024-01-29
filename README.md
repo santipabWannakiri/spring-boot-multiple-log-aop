@@ -1,4 +1,10 @@
 # spring-boot-multiple-log-aop
+## Introduction
+As the person responsible for overseeing the observability solution for wealth products, my role involves customizing various functionalities to align with our business needs, even though we've acquired a software package from a vendor. One key area requiring substantial development is logging. We are tasked with building logging mechanisms from the ground up, engaging in discussions with the vendor to establish mutual agreement on aspects such as logging data fields, logging format, and logging correlation. 
+
+Having dedicated time to research and discover effective logging solutions, I aim to document and share the insights gained through this blog for the benefit of others.
+
+
 
 
 
