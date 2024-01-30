@@ -4,6 +4,20 @@ As the person responsible for overseeing the observability solution for wealth p
 
 Having dedicated time to research and discover effective logging solutions, I aim to document and share the insights gained through this blog for the benefit of others.
 
+## Challenges in Logging Design 
+-Once I deal with the logging design for shipping the log from the local application to the ELK stack, There are many questions that pop into my head, such as
+-How can we know what the data is that we should or shouldn't push to ELK?
+-Do we need to log the payload and ship it to ELK?
+-Then, how will we handle confidential data?
+etc.
+
+## First step into the logging design
+I thought a lot about where to start, and I began with a simple question: "Which logs from our apps should go to ELK?" This is a big deal because it might not a good idea to send everything to ELK. Especially in my situation, ELK is like a shared tool for everyone in the organization.
+
+To answer this question, we need to think over back about who will use these logs and how they'll use them. It's not only about what information to log but also about making sure the logs are useful for the people who will be using them.
+
+For example, in my case, there are 3 teams that's going to consume the logging from ELK, and 3 of them use logging for analyzing the difference objective as shown below.
+
 
 
 
