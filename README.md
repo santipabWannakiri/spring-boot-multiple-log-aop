@@ -28,6 +28,17 @@ For example, in my case, there are 3 teams that's going to consume the logging f
 
 So far, I know who my customers are and what they want. Therefore, to answer the question, "Which logs from our apps should go to ELK?" It's easier now; we can select the data fields to log and ship it to ELK for meeting objective of three team.
 
+## Multiple log
+Until now, I made some drafts of the data logging fields we'll send to ELK. Now, we'll concentrate on coding our program to handle logging. Even though we have specific data fields for ELK, we also need to set up the program to keep logs locally.\
+Local logs store all the detailed information about how the application behaves, which is super important for investigating issues when they happen.
+
+
+
+
+
+
+
+
 
 1. Using Multiple Appenders in Configuration (Preferred):
 Pros:
