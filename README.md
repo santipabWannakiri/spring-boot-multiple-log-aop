@@ -26,6 +26,7 @@ For example, in my case, there are 3 teams that's going to consume the logging f
 | Application Team| Identify error transactions                 | Investigating transaction outcomes, events, and associated errors |
 
 
+So far, I know who my customers are and what they want. Therefore, to answer the question, "Which logs from our apps should go to ELK?" It's easier now; we can select the data fields to log and ship it to ELK for meeting objective of three team.
 
 
 1. Using Multiple Appenders in Configuration (Preferred):
