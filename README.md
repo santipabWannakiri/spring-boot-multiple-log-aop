@@ -19,6 +19,12 @@ To answer this question, we need to think over back about who will use these log
 For example, in my case, there are 3 teams that's going to consume the logging from ELK, and 3 of them use logging for analyzing the difference objective as shown below.
 
 
+| Team            | Focus                                      | Objective                                               |
+|-----------------|--------------------------------------------|---------------------------------------------------------|
+| Capacity Team   | Track the quantity of transactions          | Using logging to estimate transaction growth and capacity planning  |
+| Warroom Team    | Monitor transaction duration               | Alerting when the duration of transactions spikes        |
+| Application Team| Identify error transactions                 | Investigating transaction outcomes, events, and associated errors |
+
 
 
 
