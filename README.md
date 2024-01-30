@@ -5,10 +5,10 @@ As the person responsible for overseeing the observability solution for wealth p
 Having dedicated time to research and discover effective logging solutions, I aim to document and share the insights gained through this blog for the benefit of others.
 
 ## Challenges in Logging Design 
--Once I deal with the logging design for shipping the log from the local application to the ELK stack, There are many questions that pop into my head, such as
--How can we know what the data is that we should or shouldn't push to ELK?
--Do we need to log the payload and ship it to ELK?
--Then, how will we handle confidential data?
+Once I deal with the logging design for shipping the log from the local application to the ELK stack, There are many questions that pop into my head, such as\
+-How can we know what the data is that we should or shouldn't push to ELK?\
+-Do we need to log the payload and ship it to ELK?\
+-Then, how will we handle confidential data?\
 etc.
 
 ## First step into the logging design
