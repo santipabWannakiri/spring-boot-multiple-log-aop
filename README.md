@@ -1,4 +1,3 @@
-# spring-boot-multiple-log-aop
 ## Introduction
 As the person responsible for overseeing the observability solution for wealth products, my role involves customizing various functionalities to align with our business needs, even though we've acquired a software package from a vendor. One key area requiring substantial development is logging. We are tasked with building logging mechanisms from the ground up, engaging in discussions with the vendor to establish mutual agreement on aspects such as logging data fields, logging format, and logging correlation. 
 
@@ -31,6 +30,25 @@ So far, I know who my customers are and what they want. Therefore, to answer the
 ## Multiple log
 Until now, I made some drafts of the data logging fields we'll send to ELK. Now, we'll concentrate on coding our program to handle logging. Even though we have specific data fields for ELK, we also need to set up the program to keep logs locally.\
 Local logs store all the detailed information about how the application behaves, which is super important for investigating issues when they happen.
+
+<p align="center">
+  <img src="images/multiple-log.png" alt="image description" width="350" height="350">
+</p>
+
+The illustration above explains that there are 2 types of logs:\
+1.CENTRAL_LOG: This log is sent to ELK, and we need to use the ECS standard and the ECS logging library to automatically convert the log into JSON format.\
+2.LOCAL_LOG: This log is kept locally and contains all the behavior of our application.
+
+Since LOCAL_LOG contains all logs related to our application, it might be challenging to investigate if all logs are kept in a single file. Therefore, it is practical to separate logs into multiple files based on their content. The way to separate log files depends on the design or requirements.
+
+In my case, I separated payload logs from system logs. This is helpful because, in case of transmission errors, like a user entering data in an incorrect format, we can focus on investigating payload.log.
+
+On the other hand, if our application encounters a major issue, such as being unable to start or the service being down, we can investigate from system.log.
+
+
+## Multiple log
+
+
 
 
 
