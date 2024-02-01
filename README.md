@@ -36,8 +36,8 @@ Local logs store all the detailed information about how the application behaves,
 </p>
 
 The illustration above explains that there are 2 types of logs:\
-1.CENTRAL_LOG: This log is sent to ELK, and we need to use the ECS standard and the ECS logging library to automatically convert the log into JSON format.\
-2.LOCAL_LOG: This log is kept locally and contains all the behavior of our application.
+`1.CENTRAL_LOG:` This log is sent to ELK, and we need to use the ECS standard and the ECS logging library to automatically convert the log into JSON format.\
+`2.LOCAL_LOG:` This log is kept locally and contains all the behavior of our application.
 
 Since LOCAL_LOG contains all logs related to our application, it might be challenging to investigate if all logs are kept in a single file. Therefore, it is practical to separate logs into multiple files based on their content. The way to separate log files depends on the design or requirements.
 
@@ -46,37 +46,30 @@ In my case, I separated payload logs from system logs. This is helpful because, 
 On the other hand, if our application encounters a major issue, such as being unable to start or the service being down, we can investigate from system.log.
 
 
-## Multiple log
+## Configuration multiple log 
+There are big major 2 way to configure separate log file. Which both of way there are pros and cons at following. 
 
+`1. Using Multiple Appenders in Configuration :`
 
-
-
-
-
-
-
-
-
-
-1. Using Multiple Appenders in Configuration (Preferred):
 Pros:
-Centralized Configuration: Manages all logging settings in a single logback-spring.xml file, promoting consistency and maintainability.\
-Efficient Resource Management: Appenders are shared across the application, reducing memory overhead and potential logging conflicts.\
-Granular Control: Allows fine-tuning of log levels, file locations, formats, and rotation policies for each appender.\
-Dynamic Configuration: Can be modified at runtime without code changes (if using libraries like Logback's JMXConfigurator).\
+* Centralized Configuration: Manages all logging settings in a single logback-spring.xml file, promoting consistency and maintainability.
+* Efficient Resource Management: Appenders are shared across the application, reducing memory overhead and potential logging conflicts.
+* Granular Control: Allows fine-tuning of log levels, file locations, formats, and rotation policies for each appender.
+* Dynamic Configuration: Can be modified at runtime without code changes (if using libraries like Logback's JMXConfigurator).
 
 Cons:
-Initial Setup: Requires understanding of logging frameworks and configuration syntax.
+* Initial Setup: Requires understanding of logging frameworks and configuration syntax.
 
-2. Creating New Logger Instances:
+`2. Creating New Logger Instances:`
+   
 Pros:
-Code-Level Control: Logs can be directed to specific files from within code, offering flexibility for certain use cases.\
-Customization: Can tailor logging behavior for specific components or modules.
+* Code-Level Control: Logs can be directed to specific files from within code, offering flexibility for certain use cases.
+* Customization: Can tailor logging behavior for specific components or modules.
 
 Cons:
-Potential Overhead: Creating many logger instances can increase memory usage and logging overhead.\
-Management Complexity: Tracking and managing multiple logger instances can become cumbersome.\
-Configuration Scattering: Logging settings are dispersed throughout code, making maintenance and global changes challenging.
+* Potential Overhead: Creating many logger instances can increase memory usage and logging overhead.
+* Management Complexity: Tracking and managing multiple logger instances can become cumbersome.
+* Configuration Scattering: Logging settings are dispersed throughout code, making maintenance and global changes challenging.
 
 Best Practices:
 Prioritize configuration-based logging: This approach is generally recommended for most Spring Boot applications due to its centralized management, efficiency, and flexibility.\
