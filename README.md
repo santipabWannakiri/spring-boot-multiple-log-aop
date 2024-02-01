@@ -54,11 +54,13 @@ On the other hand, if our application encounters a major issue, such as being un
 To set up multiple log files, I employed the following 2 approaches:
 
 `1. Logback Configuration:` Utilized Logback to manage multiple log files with the following settings in the logback.xml file:
+[logback.xml](https://github.com/santipabWannakiri/spring-boot-multiple-log-aop/blob/main/src/main/resources/logback-spring.xml)
 * Loggers: Configured two loggers, one for CENTRAL_LOG and another for LOCAL_LOG.
 * Log Level: Set log level to INFO, capturing all logs.
 * Rolling Policy: Implemented a rolling policy to archive logs based on date.
 * AsyncAppender: Employed an AsyncAppender for asynchronous log processing.
-
-`2. Logging Aspect with Spring AOP:` Applied the concept of Aspect-Oriented Programming (AOP) in Spring for capturing logs related to CENTRAL_LOG and LOCAL_LOG.
+  
+`2. Logging Aspect with Spring AOP:` Applied the concept of Aspect-Oriented Programming (AOP) in Spring for capturing logs related to CENTRAL_LOG and LOCAL_LOG: [ECSLoggingAspect](https://github.com/santipabWannakiri/spring-boot-multiple-log-aop/blob/main/src/main/java/com/multiple/log/aop/configuration/ECSLoggingAspect.java)
+    and    [PayloadLoggingAspect](https://github.com/santipabWannakiri/spring-boot-multiple-log-aop/blob/main/src/main/java/com/multiple/log/aop/configuration/PayloadLoggingAspect.java)
 * ECSLoggingAspect: Captured logs from services and structured them according to the ECS standard, incorporating custom fields.
 * PayloadLoggingAspect: Captured payload information from request and response.
