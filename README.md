@@ -64,3 +64,5 @@ To set up multiple log files, I employed the following 2 approaches:
     and    [PayloadLoggingAspect](https://github.com/santipabWannakiri/spring-boot-multiple-log-aop/blob/main/src/main/java/com/multiple/log/aop/configuration/PayloadLoggingAspect.java)
 * ECSLoggingAspect: Captured logs from services and structured them according to the ECS standard, incorporating custom fields.
 * PayloadLoggingAspect: Captured payload information from request and response.
+
+The provided configuration employs Logback for log file management and Spring AOP for log capturing, specifically addressing cross-cutting concerns. This integration significantly improves the overall logging functionality within the application.
