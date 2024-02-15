@@ -66,3 +66,7 @@ To set up multiple log files, I employed the following 2 approaches:
 * PayloadLoggingAspect: Captured payload information from request and response.
 
 The provided configuration employs Logback for log file management and Spring AOP for log capturing, specifically addressing cross-cutting concerns. This integration significantly improves the overall logging functionality within the application.
+
+
+
+[ECS fields](https://github.com/elastic/ecs/blob/8.11/generated/csv/fields.csv)
